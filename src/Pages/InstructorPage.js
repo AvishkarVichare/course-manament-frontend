@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ScheduledCards from '../Components/ScheduledCards'
+import toast from 'react-hot-toast'
 
 const InstructorPage = () => {
     
@@ -12,6 +13,7 @@ const InstructorPage = () => {
     const navigate = useNavigate()
     const [scheduledLectures, setScheduledLectures] = useState([])
     const getScheduledLectures = async () => {
+      try{
         console.log('runnig')
         const res = await axios.get(`${process.env.REACT_APP_BACKEND}/i/getlectures`,{
             headers
@@ -19,6 +21,9 @@ const InstructorPage = () => {
         console.log(res)
         setScheduledLectures(res.data.data)
         console.log(scheduledLectures)
+      }catch(err){
+        toast.error(err.message)
+      }
     }
 
     useEffect(() => {

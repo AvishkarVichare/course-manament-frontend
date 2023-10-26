@@ -11,6 +11,7 @@ import InstructorSignup from './Pages/InstructorSignup'
 import InstructorLogin from './Pages/InstructorLogin'
 import toast, { Toaster } from 'react-hot-toast';
 import InstructorPage from './Pages/InstructorPage'
+import MainPage from './Pages/MainPage'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <Toaster/>
 
     <Routes>
+        <Route exact path='/' element={<MainPage/>} />
         <Route exact path='/admin/login' element={<AdminLogin/>} />
         <Route exact path='/admin/signup' element={<AdminSignup/>} />
         <Route exact path='/instructor/signup' element={<InstructorSignup/>} />
