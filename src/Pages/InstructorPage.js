@@ -14,6 +14,9 @@ const InstructorPage = () => {
     const [scheduledLectures, setScheduledLectures] = useState([])
     const getScheduledLectures = async () => {
       try{
+
+      
+
         console.log('runnig')
         const res = await axios.get(`${process.env.REACT_APP_BACKEND}/i/getlectures`,{
             headers
@@ -22,7 +25,10 @@ const InstructorPage = () => {
         setScheduledLectures(res.data.data)
         console.log(scheduledLectures)
       }catch(err){
+        toast.error('login as instructor first ');
+
         toast.error(err.message)
+        navigate('/instructor/login')
       }
     }
 

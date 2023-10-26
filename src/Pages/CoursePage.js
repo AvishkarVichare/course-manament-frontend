@@ -28,11 +28,13 @@ const navigate = useNavigate()
 
     <div className='flex flex-wrap gap-4'>
     {
+
+        courses?.length==0?<h2 className='text-center text-[3rem] w-full text-gray-500 '>No courses</h2>:(
         courses.map((course, index)=>{
             return(
                 <CourseCard course={course}/>
             )
-        })
+        }))
     }
     </div>
 
