@@ -26,7 +26,7 @@ const navigate = useNavigate()
             navigate('/admin/login')
         }
 
-        const res = await axios.get('https://ideamagixbackend-1-a8945851.deta.app/api/v1/c/get',{
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND}/c/get`,{
             headers
             })
             console.log(res.data.courses);
@@ -39,7 +39,7 @@ const navigate = useNavigate()
 
     const addCourse = async(data) =>{
        try{
-        const res = await axios.post('http://127.0.0.1:9000/api/v1/c/create',data, {
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/c/create`,data, {
             headers
         })
 
@@ -60,7 +60,7 @@ const navigate = useNavigate()
     
     const getLecturesOfCourse = async(courseId)=>{
         try{
-            const res = await axios.get(`http://127.0.0.1:9000/api/v1/c/l/get/${courseId}`,{
+            const res = await axios.get(`${process.env.REACT_APP_BACKEND}/c/l/get/${courseId}`,{
             headers
         })
         setLectures(res.data.data);
@@ -74,7 +74,7 @@ const navigate = useNavigate()
 
     const getInstructorsList = async ()=>{
        try{
-        const res = await axios.get('http://127.0.0.1:9000/api/v1/i/get', {
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND}/i/get`, {
             headers
         })
         // console.log(res);
@@ -87,7 +87,7 @@ const navigate = useNavigate()
     const addLecture = async(data)=>{
         // console.log("data", data)
      try{
-        const res = await axios.post('http://127.0.0.1:9000/api/v1/c/l/add',data, {
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/c/l/add`,data, {
             headers
         })
 

@@ -17,7 +17,7 @@ const InstructorSignup = () => {
         try{
         
         e.preventDefault();
-        const res = await axios.post('http://127.0.0.1:9000/api/v1/i/create', credential);
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/i/create`, credential);
         console.log(res);
         localStorage.setItem('auth-token', res.data.token);
 

@@ -17,7 +17,7 @@ const AdminSignup = () => {
     const handleSubmit = async(e)=>{
         try{
         e.preventDefault();
-        const res = await axios.post('http://127.0.0.1:9000/api/v1/a/create', credential);
+        const res = await axios.post(`${process.env.REACT_APP_BACKEND}/a/create`, credential);
         console.log(res);
         localStorage.setItem('auth-token', res.data.token);
 

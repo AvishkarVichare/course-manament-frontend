@@ -13,7 +13,7 @@ const InstructorPage = () => {
     const [scheduledLectures, setScheduledLectures] = useState([])
     const getScheduledLectures = async () => {
         console.log('runnig')
-        const res = await axios.get('http://127.0.0.1:9000/api/v1/i/getlectures',{
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND}/i/getlectures`,{
             headers
         })
         console.log(res)
