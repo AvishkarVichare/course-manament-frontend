@@ -5,6 +5,10 @@
 This project features two panels: the admin panel and the instructor panel.
 
 ### Admin Panel
+ # credentials of admin panel 
+
+  - username: admin
+  - password: 1234
 
 In the admin panel, administrators have the capability to create courses by providing essential details such as the course name, level, image, and description. Admins can also assign instructors to specific courses by selecting the course and adding instructors from a dropdown menu. The dropdown menu includes instructors who have signed up with the app.
 
